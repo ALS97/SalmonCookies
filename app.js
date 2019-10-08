@@ -108,8 +108,33 @@ var Shop4 = {
     }
   }
 };
+var Shop5 = {
+  shopHours: ['6am', '7am', '8am', '9am', '10am', '11am', '12am', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm', '8pm'],
+  minCust: 2,
+  maxCust: 57,
+  avgCookie: 5,
+  hourTotals: [],
+  locationName: 'Sequim',
+
+  render: function () {
+    for (var i = 0; i < this.shopHours.length; i++) {
+      var childEl = document.createElement('li');
+      this.shopHours[i];
+      this.hourTotals[i] = hour(2, 57);
+      childEl.textContent = `Shop Hours: ${this.shopHours[i]} ~ Cookies: ${this.hourTotals[i]}`;
+      parentEL.appendChild(childEl);
+
+    }
+
+    var sum = 0;
+    for (i = 0; i < this.shopHours.length; i++) {
+      sum + this.shopHours[i];
+    }
+  }
+};
 
 Shop1.render();
 Shop2.render();
 Shop3.render();
 Shop4.render();
+Shop5.render();
