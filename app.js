@@ -1,6 +1,10 @@
 
 var parentEL = document.getElementById('parentElement');
 
+var child = document.createElement('h1');
+child.textContent = 'Seattle';
+parentEL.appendChild(child);
+
 function hour(min, max) {
   min = Math.ceil(min);
   max = Math.floor(max);
@@ -9,23 +13,26 @@ function hour(min, max) {
 
 var Shop1 = {
   shopHours: ['6am', '7am', '8am', '9am', '10am', '11am', '12am', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm', '8pm'],
-  minCust: 10,
-  maxCust: 60,
-  avgCookie: 13,
+  minCust: 23,
+  maxCust: 65,
+  avgCookie: 6.5,
   hourTotals: [],
   locationName: 'Seattle',
 
   render: function () {
+    var totalcookies = 0;
     for (var i = 0; i < this.shopHours.length; i++) {
       var childEl = document.createElement('li');
       this.shopHours[i];
-      this.hourTotals[i] = hour(10, 60);
+      this.hourTotals[i] = hour(23, 65);
       // childEl.textContent = 'quack';
       childEl.textContent = `Shop Hours: ${this.shopHours[i]} ~ Customers: ${this.hourTotals[i]}`;
       parentEL.appendChild(childEl);
       // this.hourTotals[i]= hour();
 
     }
+    
+ 
 
     var sum = 0;
     for (i = 0; i < this.shopHours.length; i++) {
@@ -36,17 +43,17 @@ var Shop1 = {
 
 var Shop2 = {
   shopHours: ['6am', '7am', '8am', '9am', '10am', '11am', '12am', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm', '8pm'],
-  minCust: 8,
-  maxCust: 53,
-  avgCookie: 8,
+  minCust: 3,
+  maxCust: 24,
+  avgCookie: 1.2,
   hourTotals: [],
-  locationName: 'Port Orchard',
+  locationName: 'Tokyo',
 
   render: function () {
     for (var i = 0; i < this.shopHours.length; i++) {
       var childEl = document.createElement('li');
       this.shopHours[i];
-      this.hourTotals[i] = hour(8, 53);
+      this.hourTotals[i] = hour(3, 24);
       childEl.textContent = `Shop Hours: ${this.shopHours[i]} ~ Customers: ${this.hourTotals[i]}`;
       parentEL.appendChild(childEl);
 
@@ -61,17 +68,17 @@ var Shop2 = {
 
 var Shop3 = {
   shopHours: ['6am', '7am', '8am', '9am', '10am', '11am', '12am', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm', '8pm'],
-  minCust: 12,
-  maxCust: 39,
-  avgCookie: 3,
+  minCust: 11,
+  maxCust: 38,
+  avgCookie: 3.7,
   hourTotals: [],
-  locationName: 'Tukwilla',
+  locationName: 'Dubai',
 
   render: function () {
     for (var i = 0; i < this.shopHours.length; i++) {
       var childEl = document.createElement('li');
       this.shopHours[i];
-      this.hourTotals[i] = hour(12, 39);
+      this.hourTotals[i] = hour(11, 38);
       childEl.textContent = `Shop Hours: ${this.shopHours[i]} ~ Customers: ${this.hourTotals[i]}`;
       parentEL.appendChild(childEl);
 
@@ -86,17 +93,17 @@ var Shop3 = {
 
 var Shop4 = {
   shopHours: ['6am', '7am', '8am', '9am', '10am', '11am', '12am', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm', '8pm'],
-  minCust: 5,
-  maxCust: 37,
-  avgCookie: 5,
+  minCust: 20,
+  maxCust: 38,
+  avgCookie: 2.3,
   hourTotals: [],
-  locationName: 'Tacoma',
+  locationName: 'Paris',
 
   render: function () {
     for (var i = 0; i < this.shopHours.length; i++) {
       var childEl = document.createElement('li');
       this.shopHours[i];
-      this.hourTotals[i] = hour(5, 37);
+      this.hourTotals[i] = hour(20, 38);
       childEl.textContent = `Shop Hours: ${this.shopHours[i]} ~ Cookies: ${this.hourTotals[i]}`;
       parentEL.appendChild(childEl);
 
@@ -111,10 +118,10 @@ var Shop4 = {
 var Shop5 = {
   shopHours: ['6am', '7am', '8am', '9am', '10am', '11am', '12am', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm', '8pm'],
   minCust: 2,
-  maxCust: 57,
-  avgCookie: 5,
+  maxCust: 16,
+  avgCookie: 4.6,
   hourTotals: [],
-  locationName: 'Sequim',
+  locationName: 'Lima',
 
   render: function () {
     for (var i = 0; i < this.shopHours.length; i++) {
