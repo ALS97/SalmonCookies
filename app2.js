@@ -1,5 +1,6 @@
 'use strict';
 
+
 CookieShop.hours = ['6am', '7am', '8am', '9am', '10am', '11am', '12am', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm', '8pm'];
 // array to store all new instantiations on CookieShop constructor
 CookieShop.allStores = [];
@@ -100,6 +101,23 @@ function renderFooterRow(){
   CookieShop.tableDataEl.appendChild(trEl);
 
 }
+var userForm = document.getElementById('user-form');
+userForm.addEventListener('submit', handleSubmit);
+
+
+function handleSubmit(event) {
+  event.preventDefault();
+  var mincustomer = event.target.MinCust.value;
+  var maxcustomer = event.target.MaxCust.value;
+  var avgcookie = event.target.AvgCookie.value;
+  var location = event.target.Location.value;
+  document.getElementById('MinCust').value=null;
+  document.getElementById('MaxCust').value=null;
+  document.getElementById('AvgCookie').value=null;
+  document.getElementById('Location').value=null;
+  new CookieShop(mincustomer, maxcustomer, avgcookie, location);
+}
+
 
 
 new CookieShop(23, 65, 6.5, 'Seattle');
@@ -107,7 +125,9 @@ new CookieShop(3, 24, 1.2, 'Tokyo');
 new CookieShop(11, 38, 3.7, 'Dubai');
 new CookieShop(20, 38, 2.3, 'Paris');
 new CookieShop(2, 16, 4.6, 'Lima');
+
 renderFooterRow();
+
 
 
 
