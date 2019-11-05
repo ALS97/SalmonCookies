@@ -1,7 +1,28 @@
 body{
-    background-color: grey;
+    background-color: salmon;
 }
 #childEl {
 border: 3px solid black;
 
+}
+#blurb{
+    font-size: 23pt;
+    text-align: center;
+    border: black 3px solid;
+    background-color: blanchedalmond;
+}
+#pic{
+    text-align: center;
+    align-content: center;
+}
+#title{
+    font-family: 'Tangerine', serif;
+    text-align: center;
+    font-size: 30pt;
+}
+#tableData{
+    align-content: center;
+}
+#footer{
+    text-align: center;
 }
