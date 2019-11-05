@@ -1,6 +1,6 @@
 'use strict';
 
-
+var tableBody = document.getElementById('tableElement');
 CookieShop.hours = ['6am', '7am', '8am', '9am', '10am', '11am', '12am', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm', '8pm'];
 // array to store all new instantiations on CookieShop constructor
 CookieShop.allStores = [];
@@ -78,8 +78,10 @@ CookieShop.prototype.renderShopRow = function(){
 };
 
 
+
 function renderFooterRow(){
   var trEl = document.createElement('tr');
+  trEl.setAttribute('id', 'footerrow');
   var tdEl = document.createElement('td');
   tdEl.textContent = 'Hourly Totals:';
   trEl.appendChild(tdEl);
@@ -90,7 +92,12 @@ function renderFooterRow(){
 
     for(var j = 0; j < CookieShop.allStores.length; j++){
       storeHourlyTotal += CookieShop.allStores[j].hourlyCookiesTotal[i];
+      for(var k= 0; k < CookieShop.allStores.length; k++){
+        var dailyTotal = 0;
+
+      }
     }
+
     td.textContent = storeHourlyTotal;
     trEl.appendChild(td);
   }
@@ -104,7 +111,22 @@ var userForm = document.getElementById('user-form');
 userForm.addEventListener('submit', handleSubmit);
 
 
+
+
+
+
+
+
+new CookieShop(23, 65, 6.5, 'Seattle');
+new CookieShop(3, 24, 1.2, 'Tokyo');
+new CookieShop(11, 38, 3.7, 'Dubai');
+new CookieShop(20, 38, 2.3, 'Paris');
+new CookieShop(2, 16, 4.6, 'Lima');
+
+
+renderFooterRow();
 function handleSubmit(event) {
+
   event.preventDefault();
   var mincustomer = event.target.MinCust.value;
   var maxcustomer = event.target.MaxCust.value;
@@ -115,17 +137,16 @@ function handleSubmit(event) {
   document.getElementById('AvgCookie').value=null;
   document.getElementById('Location').value=null;
   new CookieShop(mincustomer, maxcustomer, avgcookie, location);
+  document.getElementById('footerrow').remove();
+  renderFooterRow();
+
+
 }
 
 
 
-new CookieShop(23, 65, 6.5, 'Seattle');
-new CookieShop(3, 24, 1.2, 'Tokyo');
-new CookieShop(11, 38, 3.7, 'Dubai');
-new CookieShop(20, 38, 2.3, 'Paris');
-new CookieShop(2, 16, 4.6, 'Lima');
 
-renderFooterRow();
+
 
 
 
